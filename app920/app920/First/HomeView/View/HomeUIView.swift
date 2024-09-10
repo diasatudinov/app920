@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeUIView: View {
+    @Binding var tabNum: Int
     var body: some View {
         ZStack {
             Color.mainBg.ignoresSafeArea()
@@ -32,22 +33,13 @@ struct HomeUIView: View {
                     Spacer()
                 }
                 
-                if true {
+                if !true {
                     VStack(spacing: 10) {
                         Image("emptyLogo")
                             .padding(.bottom, 10)
-                        
-                        Text("The list is empty")
-                            .font(.system(size: 16, weight: .semibold))
-                            .foregroundColor(.white)
-                        Text("Add new points of interest by clicking \non the button")
-                            .multilineTextAlignment(.center)
-                            .font(.system(size: 15))
-                            .foregroundColor(.white)
-                            .padding(.bottom, 10)
-                        
+                        Spacer()
                         Button {
-                            
+                            tabNum = 1
                         } label: {
                             ZStack {
                                 Rectangle()
@@ -61,15 +53,43 @@ struct HomeUIView: View {
                         }
                     }.padding(.top, 50)
                 } else {
-                    
+                    HStack {
+                        Text("Planned attractions")
+                            .foregroundColor(.white)
+                            .font(.system(size: 22, weight: .bold))
+                        Spacer()
+                        Button {
+                            tabNum = 1
+                        } label: {
+                            HStack(spacing: 2) {
+                                Text("Look all")
+                                    .font(.system(size: 15))
+                                Image(systemName: "chevron.right")
+                            }.foregroundColor(.redBtn)
+                        }
+                    }
+                    Spacer()
+                    Button {
+                        tabNum = 1
+                    } label: {
+                        ZStack {
+                            Rectangle()
+                                .frame(height: 50)
+                                .cornerRadius(16)
+                                .foregroundColor(.redBtn)
+                            Text("Add point of interest")
+                                .font(.system(size: 15))
+                                .foregroundColor(.white)
+                        }
+                    }
                 }
                 
-                Spacer()
-            }.padding(.horizontal)
+                
+            }.padding(.horizontal).padding(.bottom, 80)
         }
     }
 }
 
 #Preview {
-    HomeUIView()
+    HomeUIView(tabNum: .constant(0))
 }

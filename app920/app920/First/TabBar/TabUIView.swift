@@ -19,7 +19,7 @@ struct TabUIView: View {
             
             switch selectedTab {
             case 0:
-                HomeUIView()
+                HomeUIView(tabNum: $selectedTab)
                     
             case 1:
                 Text("Second")

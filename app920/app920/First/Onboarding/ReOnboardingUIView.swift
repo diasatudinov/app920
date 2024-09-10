@@ -115,8 +115,7 @@ struct ReOnboardingUIView: View {
             }
             
         } else {
-            Text("TabView")
-            //TabUIView()
+            TabUIView()
         }
     }
 }
