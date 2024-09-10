@@ -13,8 +13,8 @@ struct UsOnboardingUIView: View {
     @State private var timer: Timer?
     @State private var isLoadingView: Bool = true
     @State private var isNotificationView: Bool = true
-    @State private var pageNum: Int = 2
-    @State var onboardingShowed: Bool = false
+    @State private var pageNum: Int = 1
+    @AppStorage("onboardingShowed") var onboardingShowed: Bool = false
 
     var body: some View {
         if !onboardingShowed {
