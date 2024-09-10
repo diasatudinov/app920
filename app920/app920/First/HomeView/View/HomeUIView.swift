@@ -68,6 +68,14 @@ struct HomeUIView: View {
                             }.foregroundColor(.redBtn)
                         }
                     }
+                    
+                    ScrollView {
+                        AttractionCellUIView()
+                        AttractionCellUIView()
+                        AttractionCellUIView()
+                        AttractionCellUIView()
+                        AttractionCellUIView()
+                    }
                     Spacer()
                     Button {
                         tabNum = 1
