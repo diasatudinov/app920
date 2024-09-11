@@ -21,6 +21,14 @@
 		2B8BBDA62C90718B008139DF /* NewAttractionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDA52C90718B008139DF /* NewAttractionUIView.swift */; };
 		2B8BBDA82C907196008139DF /* Attraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDA72C907196008139DF /* Attraction.swift */; };
 		2B8BBDAB2C9075EA008139DF /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDAA2C9075EA008139DF /* ImagePicker.swift */; };
+		2B8BBDD12C917FCD008139DF /* AttractionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDD02C917FCC008139DF /* AttractionViewModel.swift */; };
+		2B8BBDD32C91888B008139DF /* AttractionDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDD22C91888B008139DF /* AttractionDetailsUIView.swift */; };
+		2B8BBDD92C919B30008139DF /* MemoriesUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDD82C919B30008139DF /* MemoriesUIView.swift */; };
+		2B8BBDDB2C919E3A008139DF /* AttractionMemoryCellUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDDA2C919E3A008139DF /* AttractionMemoryCellUIView.swift */; };
+		2B8BBDDD2C919FD1008139DF /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDDC2C919FD1008139DF /* Memory.swift */; };
+		2B8BBDDF2C91A970008139DF /* MemoryDetailsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDDE2C91A970008139DF /* MemoryDetailsUIView.swift */; };
+		2B8BBDE12C91AA89008139DF /* AddMemoryUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDE02C91AA89008139DF /* AddMemoryUIView.swift */; };
+		2B8BBDE32C91ACCB008139DF /* MemoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBDE22C91ACCB008139DF /* MemoryCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +47,14 @@
 		2B8BBDA52C90718B008139DF /* NewAttractionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAttractionUIView.swift; sourceTree = "<group>"; };
 		2B8BBDA72C907196008139DF /* Attraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Attraction.swift; sourceTree = "<group>"; };
 		2B8BBDAA2C9075EA008139DF /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		2B8BBDD02C917FCC008139DF /* AttractionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionViewModel.swift; sourceTree = "<group>"; };
+		2B8BBDD22C91888B008139DF /* AttractionDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionDetailsUIView.swift; sourceTree = "<group>"; };
+		2B8BBDD82C919B30008139DF /* MemoriesUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoriesUIView.swift; sourceTree = "<group>"; };
+		2B8BBDDA2C919E3A008139DF /* AttractionMemoryCellUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttractionMemoryCellUIView.swift; sourceTree = "<group>"; };
+		2B8BBDDC2C919FD1008139DF /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		2B8BBDDE2C91A970008139DF /* MemoryDetailsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryDetailsUIView.swift; sourceTree = "<group>"; };
+		2B8BBDE02C91AA89008139DF /* AddMemoryUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoryUIView.swift; sourceTree = "<group>"; };
+		2B8BBDE22C91ACCB008139DF /* MemoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,7 @@
 		2B8BBD8C2C9028B5008139DF /* First */ = {
 			isa = PBXGroup;
 			children = (
+				2B8BBDD42C919B0B008139DF /* Memories */,
 				2B8BBDA92C9075DD008139DF /* Service */,
 				2B8BBD9D2C905B80008139DF /* AttractionsView */,
 				2B8BBD972C904332008139DF /* HomeView */,
@@ -187,6 +204,7 @@
 		2B8BBD9E2C905B86008139DF /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				2B8BBDD02C917FCC008139DF /* AttractionViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -197,6 +215,7 @@
 				2B8BBDA12C905BA4008139DF /* AttractionsUIView.swift */,
 				2B8BBDA32C905BB9008139DF /* AttractionCellUIView.swift */,
 				2B8BBDA52C90718B008139DF /* NewAttractionUIView.swift */,
+				2B8BBDD22C91888B008139DF /* AttractionDetailsUIView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -215,6 +234,43 @@
 				2B8BBDAA2C9075EA008139DF /* ImagePicker.swift */,
 			);
 			path = Service;
+			sourceTree = "<group>";
+		};
+		2B8BBDD42C919B0B008139DF /* Memories */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBDD72C919B1E008139DF /* Model */,
+				2B8BBDD62C919B1B008139DF /* View */,
+				2B8BBDD52C919B15008139DF /* ViewModel */,
+			);
+			path = Memories;
+			sourceTree = "<group>";
+		};
+		2B8BBDD52C919B15008139DF /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2B8BBDD62C919B1B008139DF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBDD82C919B30008139DF /* MemoriesUIView.swift */,
+				2B8BBDDA2C919E3A008139DF /* AttractionMemoryCellUIView.swift */,
+				2B8BBDDE2C91A970008139DF /* MemoryDetailsUIView.swift */,
+				2B8BBDE22C91ACCB008139DF /* MemoryCell.swift */,
+				2B8BBDE02C91AA89008139DF /* AddMemoryUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B8BBDD72C919B1E008139DF /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B8BBDDC2C919FD1008139DF /* Memory.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -287,17 +343,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B8BBDD32C91888B008139DF /* AttractionDetailsUIView.swift in Sources */,
 				2B8BBDA42C905BB9008139DF /* AttractionCellUIView.swift in Sources */,
+				2B8BBDDF2C91A970008139DF /* MemoryDetailsUIView.swift in Sources */,
 				2B8BBD7E2C90283A008139DF /* ContentView.swift in Sources */,
+				2B8BBDE32C91ACCB008139DF /* MemoryCell.swift in Sources */,
 				2B8BBDA62C90718B008139DF /* NewAttractionUIView.swift in Sources */,
 				2B8BBD7C2C90283A008139DF /* app920App.swift in Sources */,
 				2B8BBD9C2C904385008139DF /* HomeUIView.swift in Sources */,
 				2B8BBD962C9040A0008139DF /* TabUIView.swift in Sources */,
 				2B8BBDA82C907196008139DF /* Attraction.swift in Sources */,
+				2B8BBDDD2C919FD1008139DF /* Memory.swift in Sources */,
 				2B8BBD932C902900008139DF /* UsOnboardingUIView.swift in Sources */,
 				2B8BBD912C9028F1008139DF /* ReOnboardingUIView.swift in Sources */,
 				2B8BBDAB2C9075EA008139DF /* ImagePicker.swift in Sources */,
+				2B8BBDD12C917FCD008139DF /* AttractionViewModel.swift in Sources */,
+				2B8BBDDB2C919E3A008139DF /* AttractionMemoryCellUIView.swift in Sources */,
 				2B8BBD8B2C9028A9008139DF /* LoaderUIView.swift in Sources */,
+				2B8BBDD92C919B30008139DF /* MemoriesUIView.swift in Sources */,
+				2B8BBDE12C91AA89008139DF /* AddMemoryUIView.swift in Sources */,
 				2B8BBDA22C905BA4008139DF /* AttractionsUIView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
