@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct HomeUIView: View {
+    @ObservedObject var viewModel: AttractionViewModel
     @Binding var tabNum: Int
     var body: some View {
         ZStack {
@@ -33,7 +34,7 @@ struct HomeUIView: View {
                     Spacer()
                 }
                 
-                if !true {
+                if viewModel.attractions.isEmpty {
                     VStack(spacing: 10) {
                         Image("emptyLogo")
                             .padding(.bottom, 10)
@@ -70,11 +71,10 @@ struct HomeUIView: View {
                     }
                     
                     ScrollView {
-                        AttractionCellUIView()
-                        AttractionCellUIView()
-                        AttractionCellUIView()
-                        AttractionCellUIView()
-                        AttractionCellUIView()
+                        ForEach(viewModel.attractions.prefix(5), id: \.self) { attraction in
+                            AttractionCellUIView(attraction: attraction)
+                        }
+                        
                     }
                     Spacer()
                     Button {
@@ -93,11 +93,11 @@ struct HomeUIView: View {
                 }
                 
                 
-            }.padding(.horizontal).padding(.bottom, 80)
+            }.padding(.horizontal).padding(.bottom, 50)
         }
     }
 }
 
 #Preview {
-    HomeUIView(tabNum: .constant(0))
+    HomeUIView(viewModel: AttractionViewModel(), tabNum: .constant(0))
 }
