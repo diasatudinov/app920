@@ -11,23 +11,23 @@ struct TabUIView: View {
     @State var selectedTab = 0
     private let tabs = ["Home", "Attractions", "Memories", "Settings"]
     
-//    @ObservedObject var homeVM = HomeViewModel()
-//    @ObservedObject var procedureVM = ProcedureViewModel()
+
     @ObservedObject var attractionVM = AttractionViewModel()
+    @ObservedObject var settingsVM = SettingsViewModel()
     var body: some View {
         ZStack {
             
             switch selectedTab {
             case 0:
-                HomeUIView(viewModel: attractionVM, tabNum: $selectedTab)
+                HomeUIView(viewModel: attractionVM, settingsVM: settingsVM, tabNum: $selectedTab)
                     
             case 1:
-               AttractionsUIView(viewModel: attractionVM)
+                AttractionsUIView(viewModel: attractionVM, settingsVM: settingsVM)
 
             case 2:
-                MemoriesUIView(viewModel: attractionVM, tabNum: $selectedTab)
+                MemoriesUIView(viewModel: attractionVM, settingsVM: settingsVM, tabNum: $selectedTab)
             case 3:
-                Text("Fourth")
+               SettingsUIView(viewModel: settingsVM)
             default:
                 Text("default")
             }
