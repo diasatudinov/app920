@@ -10,6 +10,7 @@ import SwiftUI
 struct AttractionsUIView: View {
     
     @ObservedObject var viewModel: AttractionViewModel
+    @ObservedObject var settingsVM: SettingsViewModel
     let filters = ["All", "Historical", "Сultural", "Natural", "Architectural"]
     @State var selectedFilter: String?
     let columns = [
@@ -31,19 +32,27 @@ struct AttractionsUIView: View {
             VStack {
                 HStack {
                     ZStack {
-                        Image(systemName: "person.fill")
-                            .font(.system(size: 32))
-                            .foregroundColor(.red)
-                            .padding(.top)
-                            .background(Color.white.opacity(0.5)).clipShape(Circle())
-                            .padding(9)
-                            .overlay(
-                                Circle()
-                                    .stroke(Color.white.opacity(0.5), lineWidth: 1)
-                            )
+                        if let image = settingsVM.account.image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(width: 56, height: 56)
+                                .scaledToFill()
+                                .clipShape(Circle())
+                        }  else {
+                            Image(systemName: "person.fill")
+                                .font(.system(size: 32))
+                                .foregroundColor(.red)
+                                .padding(.top)
+                                .background(Color.white.opacity(0.5)).clipShape(Circle())
+                                .padding(9)
+                                .overlay(
+                                    Circle()
+                                        .stroke(Color.white.opacity(0.5), lineWidth: 1)
+                                )
+                        }
                     }
                     
-                    Text("Welcome Nina!")
+                    Text("Welcome \(settingsVM.account.name)!")
                         .foregroundColor(.white)
                         .font(.system(size: 20, weight: .semibold))
                     Spacer()
@@ -141,6 +150,6 @@ struct AttractionsUIView: View {
 }
 
 #Preview {
-    AttractionsUIView(viewModel: AttractionViewModel())
+    AttractionsUIView(viewModel: AttractionViewModel(), settingsVM: SettingsViewModel())
 }
 

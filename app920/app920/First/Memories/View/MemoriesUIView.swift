@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MemoriesUIView: View {
     @ObservedObject var viewModel: AttractionViewModel
+    @ObservedObject var settingsVM: SettingsViewModel
     @Binding var tabNum: Int
     let filters = ["All", "Historical", "Сultural", "Natural", "Architectural"]
     @State var selectedFilter: String?
@@ -21,25 +22,34 @@ struct MemoriesUIView: View {
             }
         }
     
+    
     var body: some View {
         ZStack {
             Color.mainBg.ignoresSafeArea()
             VStack {
                 HStack {
                     ZStack {
-                        Image(systemName: "person.fill")
-                            .font(.system(size: 32))
-                            .foregroundColor(.red)
-                            .padding(.top)
-                            .background(Color.white.opacity(0.5)).clipShape(Circle())
-                            .padding(9)
-                            .overlay(
-                                Circle()
-                                    .stroke(Color.white.opacity(0.5), lineWidth: 1)
-                            )
+                        if let image = settingsVM.account.image {
+                            Image(uiImage: image)
+                                .resizable()
+                                .frame(width: 56, height: 56)
+                                .scaledToFill()
+                                .clipShape(Circle())
+                        }  else {
+                            Image(systemName: "person.fill")
+                                .font(.system(size: 32))
+                                .foregroundColor(.red)
+                                .padding(.top)
+                                .background(Color.white.opacity(0.5)).clipShape(Circle())
+                                .padding(9)
+                                .overlay(
+                                    Circle()
+                                        .stroke(Color.white.opacity(0.5), lineWidth: 1)
+                                )
+                        }
                     }
                     
-                    Text("Welcome Nina!")
+                    Text("Welcome \(settingsVM.account.name)!")
                         .foregroundColor(.white)
                         .font(.system(size: 20, weight: .semibold))
                     Spacer()
@@ -110,5 +120,5 @@ struct MemoriesUIView: View {
 }
 
 #Preview {
-    MemoriesUIView(viewModel: AttractionViewModel(), tabNum: .constant(2))
+    MemoriesUIView(viewModel: AttractionViewModel(), settingsVM: SettingsViewModel(), tabNum: .constant(2))
 }
