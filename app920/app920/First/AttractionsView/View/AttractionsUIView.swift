@@ -8,8 +8,23 @@
 import SwiftUI
 
 struct AttractionsUIView: View {
+    
+    @ObservedObject var viewModel: AttractionViewModel
     let filters = ["All", "Historical", "Сultural", "Natural", "Architectural"]
     @State var selectedFilter: String?
+    let columns = [
+            GridItem(.flexible()), // First column
+            GridItem(.flexible())  // Second column
+        ]
+    
+    var filteredItems: [Attraction] {
+            if selectedFilter == nil || selectedFilter == "All" {
+                return viewModel.attractions
+            } else {
+                return viewModel.attractions.filter { $0.excursion.lowercased().contains(selectedFilter?.lowercased() ?? "All") }
+            }
+        }
+    
     var body: some View {
         ZStack {
             Color.mainBg.ignoresSafeArea()
@@ -33,13 +48,13 @@ struct AttractionsUIView: View {
                         .font(.system(size: 20, weight: .semibold))
                     Spacer()
                 }
-                if true {
+                if viewModel.attractions.isEmpty {
                     VStack(spacing: 10) {
                         Image("emptyLogo")
                             .padding(.bottom, 10)
                         Spacer()
-                        Button {
-                            
+                        NavigationLink {
+                            NewAttractionUIView(viewModel: viewModel)
                         } label: {
                             ZStack {
                                 Rectangle()
@@ -75,38 +90,57 @@ struct AttractionsUIView: View {
                             }.padding(2)
                         }
                         
-                        Spacer()
-                    }
-                    
-                    VStack {
-                        Spacer()
-                        HStack {
-                            Spacer()
-                            
-                            Button {
-                                
-                            } label: {
-                                ZStack {
-                                    Rectangle()
-                                        .frame(width: 58, height: 58)
-                                        .cornerRadius(12)
-                                        .foregroundColor(.redBtn)
-                                    Image(systemName: "plus")
-                                        .foregroundColor(.white)
-                                        .font(.system(size: 25, weight: .semibold))
+                        ScrollView {
+                            LazyVGrid(columns: columns, spacing: 20) {
+                                ForEach(filteredItems, id: \.self) { attraction in
+                                    NavigationLink {
+                                        AttractionDetailsUIView(attraction: attraction, viewModel: viewModel)
+                                    } label: {
+                                        AttractionCellSmallUIView(attraction: attraction)
+                                    }
                                 }
                             }
                             
                         }
+                        
+                        
                     }
+                    
+                    
                 }
                 
                 Spacer()
-            }.padding(.horizontal).padding(.bottom, 80)
+            }.padding(.horizontal).padding(.bottom, 40)
+            
+            if !viewModel.attractions.isEmpty {
+                VStack {
+                    Spacer()
+                    HStack {
+                        Spacer()
+                        
+                        NavigationLink {
+                            NewAttractionUIView(viewModel: viewModel)
+                            
+                        } label: {
+                            ZStack {
+                                Rectangle()
+                                    .frame(width: 58, height: 58)
+                                    .cornerRadius(12)
+                                    .foregroundColor(.redBtn)
+                                Image(systemName: "plus")
+                                    .foregroundColor(.white)
+                                    .font(.system(size: 25, weight: .semibold))
+                            }
+                        }
+                        
+                    }
+                }.padding(.horizontal).padding(.bottom, 80)
+            }
         }
     }
 }
 
 #Preview {
-    AttractionsUIView()
+    AttractionsUIView(viewModel: AttractionViewModel())
 }
+
