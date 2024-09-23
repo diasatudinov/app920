@@ -182,11 +182,11 @@ struct UsOnboardingUIView: View {
                     }
                     
                 } else {
-                    //WebUIView()
+                    WebUIView()
                 }
             }
         } else {
-           // WebUIView()
+            WebUIView()
         }
     }
     
