@@ -46,8 +46,11 @@ struct HomeUIView: View {
                 if viewModel.attractions.isEmpty {
                     VStack(spacing: 10) {
                         Image("emptyLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: UIScreen.main.bounds.width - 100)
                             .padding(.bottom, 10)
-                        Spacer()
+                        
                         Button {
                             tabNum = 1
                         } label: {
@@ -61,6 +64,7 @@ struct HomeUIView: View {
                                     .foregroundColor(.white)
                             }
                         }
+                        Spacer()
                     }.padding(.top, 50)
                 } else {
                     HStack {

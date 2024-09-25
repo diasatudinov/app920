@@ -28,19 +28,22 @@ struct UsOnboardingUIView: View {
                             switch pageNum {
                             case 1:
                                 ZStack {
-                                    VStack {
-                                        ZStack {
-                                            Image("firstScreen920")
-                                                
-                                            
-                                        }
+                                    Image("firstScreen920")
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: UIScreen.main.bounds.width)
+                                        .ignoresSafeArea(edges: .top)
+                                       // .padding(.bottom, -100)
                                     
-                                    }
                                     Image("logo2920")
-                                }.ignoresSafeArea()
+                                        .resizable()
+                                        .scaledToFit()
+                                        .frame(width: UIScreen.main.bounds.width - 150)
+                                }
                             case 2: Image("ratings920")
                                     .resizable()
-                                    .aspectRatio(contentMode: .fit)
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.width - 100)
                                     .padding(.top)
                                     //.frame(width: UIScreen.main.bounds.width)
                             default:
@@ -56,7 +59,6 @@ struct UsOnboardingUIView: View {
                                 VStack(spacing: 12) {
                                     Text("Start now and earn more")
                                         .font(.system(size: 34, weight: .bold))
-                                        .multilineTextAlignment(.center)
                                         .multilineTextAlignment(.center)
                                     Text("A proven way to make easy money")
                                         .font(.system(size: 16, weight: .semibold))
@@ -151,6 +153,9 @@ struct UsOnboardingUIView: View {
                                     }
                                 }.padding(.horizontal)
                                 Image("notifications920")
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: UIScreen.main.bounds.width - 100)
                                     .padding(.top, 35)
                                 VStack(spacing: 12) {
                                     Text("Don’t miss anything")

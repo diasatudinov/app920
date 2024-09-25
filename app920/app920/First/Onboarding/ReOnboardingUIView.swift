@@ -22,14 +22,14 @@ struct ReOnboardingUIView: View {
                     switch pageNum {
                     case 1: Image("app920Screen1")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 530)
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width - 100)
                             .padding(.top)
                             
                     case 2: Image("app920Screen2")
                             .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(height: 530)
+                            .scaledToFill()
+                            .frame(width: UIScreen.main.bounds.width - 100)
                             .padding(.top)
                     default:
                         Image("appScreen3")

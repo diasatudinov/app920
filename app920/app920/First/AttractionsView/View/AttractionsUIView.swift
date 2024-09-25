@@ -60,8 +60,11 @@ struct AttractionsUIView: View {
                 if viewModel.attractions.isEmpty {
                     VStack(spacing: 10) {
                         Image("emptyLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: UIScreen.main.bounds.width - 100)
                             .padding(.bottom, 10)
-                        Spacer()
+                        
                         NavigationLink {
                             NewAttractionUIView(viewModel: viewModel)
                         } label: {
@@ -75,6 +78,7 @@ struct AttractionsUIView: View {
                                     .foregroundColor(.white)
                             }
                         }
+                        Spacer()
                     }.padding(.top, 50)
                 } else {
                     VStack {

@@ -57,6 +57,9 @@ struct MemoriesUIView: View {
                 if viewModel.attractions.isEmpty {
                     VStack(spacing: 10) {
                         Image("emptyLogo")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: UIScreen.main.bounds.width - 100)
                             .padding(.bottom, 10)
                         
                         Button {
