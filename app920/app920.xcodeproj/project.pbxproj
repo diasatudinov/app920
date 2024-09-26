@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2B1F3FB02CA15C2600540B8F /* getData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F3FAF2CA15C2600540B8F /* getData.swift */; };
-		2B1F3FB32CA15D7100540B8F /* WebUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B1F3FB22CA15D7100540B8F /* WebUIView.swift */; };
 		2B8BBD7C2C90283A008139DF /* app920App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBD7B2C90283A008139DF /* app920App.swift */; };
 		2B8BBD7E2C90283A008139DF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B8BBD7D2C90283A008139DF /* ContentView.swift */; };
 		2B8BBD802C90283C008139DF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B8BBD7F2C90283C008139DF /* Assets.xcassets */; };
@@ -40,8 +38,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		2B1F3FAF2CA15C2600540B8F /* getData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getData.swift; sourceTree = "<group>"; };
-		2B1F3FB22CA15D7100540B8F /* WebUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebUIView.swift; sourceTree = "<group>"; };
 		2B8BBD782C90283A008139DF /* app920.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app920.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B8BBD7B2C90283A008139DF /* app920App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = app920App.swift; sourceTree = "<group>"; };
 		2B8BBD7D2C90283A008139DF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -84,14 +80,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2B1F3FB12CA15D6600540B8F /* WebView */ = {
-			isa = PBXGroup;
-			children = (
-				2B1F3FB22CA15D7100540B8F /* WebUIView.swift */,
-			);
-			path = WebView;
-			sourceTree = "<group>";
-		};
 		2B8BBD6F2C90283A008139DF = {
 			isa = PBXGroup;
 			children = (
@@ -155,7 +143,6 @@
 		2B8BBD8D2C9028BE008139DF /* Second */ = {
 			isa = PBXGroup;
 			children = (
-				2B1F3FB12CA15D6600540B8F /* WebView */,
 				2B8BBD8F2C9028DC008139DF /* Onboarding */,
 			);
 			path = Second;
@@ -259,7 +246,6 @@
 			children = (
 				2B8BBDED2C91C5F7008139DF /* Info.swift */,
 				2B8BBDAA2C9075EA008139DF /* ImagePicker.swift */,
-				2B1F3FAF2CA15C2600540B8F /* getData.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -416,7 +402,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B8BBDD32C91888B008139DF /* AttractionDetailsUIView.swift in Sources */,
-				2B1F3FB32CA15D7100540B8F /* WebUIView.swift in Sources */,
 				2B8BBDEE2C91C5F7008139DF /* Info.swift in Sources */,
 				2B8BBDEB2C91C5D2008139DF /* SettingsUIView.swift in Sources */,
 				2B8BBDA42C905BB9008139DF /* AttractionCellUIView.swift in Sources */,
@@ -437,7 +422,6 @@
 				2B8BBDD12C917FCD008139DF /* AttractionViewModel.swift in Sources */,
 				2B8BBDF32C91C999008139DF /* AccountUIView.swift in Sources */,
 				2B8BBDDB2C919E3A008139DF /* AttractionMemoryCellUIView.swift in Sources */,
-				2B1F3FB02CA15C2600540B8F /* getData.swift in Sources */,
 				2B8BBD8B2C9028A9008139DF /* LoaderUIView.swift in Sources */,
 				2B8BBDD92C919B30008139DF /* MemoriesUIView.swift in Sources */,
 				2B8BBDE12C91AA89008139DF /* AddMemoryUIView.swift in Sources */,
@@ -578,7 +562,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"app920/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Aviator Guide";
+				INFOPLIST_KEY_CFBundleDisplayName = "Avia Guide";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -612,7 +596,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"app920/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_KEY_CFBundleDisplayName = "Aviator Guide";
+				INFOPLIST_KEY_CFBundleDisplayName = "Avia Guide";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
